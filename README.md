@@ -1,9 +1,9 @@
 # OrganizerApp
-Repository for the Demo2 application
+
 
 Dear Collaborators!
 
-A bit of information about solution structure.
+A bit of information about solution structure and work with branch.
 
 We have 4 Projects:
 
@@ -14,3 +14,35 @@ We have 4 Projects:
 -"BusinessLogic" project is a layer for classes which we use to execute some actions. It refers to "Models" project.
 
 -"Models" project is the lowest layer. There are basic classes for dataModel (eg class Weather for storage data from json)
+
+
+HELPER FOR GIT (recommendation)
+
+When you cloned the repository and you are on master branch, execute:
+
+git checkout devBranch
+
+Open Visual Studio (or VsCode) and you can see the project with base functional from devBranch
+
+Then execute below command to create your branch
+
+git checkout -b myBranch
+
+That command will create a new branch and checkout to this
+
+So work on this branch. When you finish your development, execute:
+
+git add -A
+
+git commit -m "message of your commit"
+
+git status (for checking is everything okay)
+
+git push origin myBranch
+
+Then go to GitHub and create a new pull request to devBranch. 
+
+The URL of pull request send to others.
+
+
+
