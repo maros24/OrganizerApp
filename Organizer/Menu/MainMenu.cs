@@ -22,7 +22,7 @@ namespace Menu
                 Console.WriteLine("\n{0,50}", "WELCOME TO ORGANIZER, " + Environment.UserName + "!\n");
                 Console.WriteLine(" Please select an item from Menu\n");
                 Console.Write(
-                    " 1) Run Programs (for Vika)\n" +
+                    " 1) Run Windows Application\n" +
                     " 2) Work with files\n" +
                     " 3) View current weather\n" +
                     " 4) Send an e-mail (for Nikita)\n" +
@@ -34,7 +34,8 @@ namespace Menu
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("Feture is updating \n");
+                        OpenWinApp openWinApp = new OpenWinApp();
+                        openWinApp.StartApp();
                         Helper.TapAny();
                         break;
                     case 2:
