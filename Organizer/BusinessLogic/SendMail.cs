@@ -40,6 +40,7 @@ namespace BusinessLogic
             }
             catch (Exception e)
             {
+                string s= e.StackTrace;
                 Console.WriteLine(" Error: " + e.Message);
                 Console.WriteLine("\nTap any button to return");
                 Console.ReadKey();

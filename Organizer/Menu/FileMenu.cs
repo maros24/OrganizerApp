@@ -14,7 +14,6 @@ namespace Menu
         {
             int i;
             bool flag = true;
-            int numberLine;
             do
             {
                 Console.Clear();
@@ -43,19 +42,8 @@ namespace Menu
                         break;
                     case 3:
                         Console.Clear();
-                        Console.WriteLine("Please, enter the number of line to delete");
-                        try
-                        {
-                            numberLine = Int32.Parse(Console.ReadLine());
-                            Console.Clear();
-                            FileActions.DeleteLine(numberLine);
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Incorrect value. Tap any button to try again!");
-                        }
+                        Helper.DeleteLineFromFile();
                         break;
-
                     case 4:
                         Console.Clear();
                         FileActions.DeleteFile();

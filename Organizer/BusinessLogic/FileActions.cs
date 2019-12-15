@@ -24,16 +24,24 @@ namespace BusinessLogic
 
         public static void Read()
         {
-            Console.WriteLine("The text from the file is below:");
-            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+            try
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                Console.WriteLine("The text from the file is below:");
+                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
                 {
-                    Console.WriteLine(line);
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
             }
+            catch(FileNotFoundException ex)
+            {
+                Console.WriteLine("Oops, looks like something went wrong. Ensure that file exists and try again");
+            }
+
         }
 
         public static void DeleteLine(int numberLine)
@@ -53,12 +61,12 @@ namespace BusinessLogic
                     Console.WriteLine("The file doesn't exist.");
                     Console.WriteLine("\nTap any button to return");
                 }
-            }
-            catch(Exception ex)
+        }
+            catch(IndexOutOfRangeException ex)
             {
                 Console.WriteLine("Opps, looks like the line doesn't exist.");
             }
-        }
+}
 
         public static void DeleteFile()
         {
