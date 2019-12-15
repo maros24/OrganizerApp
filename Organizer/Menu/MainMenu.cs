@@ -36,22 +36,24 @@ namespace Menu
                         Console.Clear();
                         OpenWinApp openWinApp = new OpenWinApp();
                         openWinApp.StartApp();
-                        Helper.TapAny();
                         break;
                     case 2:
                         FileMenu.OpenFileMenu();
                         Helper.TapAny();
+                        Console.ReadLine();
                         break;
                     case 3:
                         Console.Clear();
                         Console.WriteLine("Ivan will fix this feature");
                         WeatherData.GetWeather();
                         Helper.TapAny();
+                        Console.ReadLine();
                         break;
                     case 4:
                         Console.Clear();
                         SendMailMenu.StartSendMail();
                         Helper.TapAny();
+                        Console.ReadLine();
                         break;
                     case 5:
                         Console.Clear();
@@ -61,9 +63,9 @@ namespace Menu
                         break;
                     default:
                         Console.WriteLine("Incorrect number. Please try again!");
+                        Console.ReadLine();
                         break;
                 }
-                Console.ReadLine();
                 Console.Clear();
             }
             while (flag);

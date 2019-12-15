@@ -35,5 +35,46 @@ namespace BusinessLogic
                 Console.WriteLine();
             }
         }
+
+        public static void DeleteLine(int numberLine)
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+                    string[] fileLines = File.ReadAllLines(path);
+                    fileLines[numberLine - 1] = String.Empty;
+                    File.WriteAllLines(path, fileLines);
+                    Console.WriteLine("Line number {0} successfully deleted", numberLine);
+                    Console.WriteLine("\nTap any button to return");
+                }
+                else
+                {
+                    Console.WriteLine("The file doesn't exist.");
+                    Console.WriteLine("\nTap any button to return");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Opps, looks like the line doesn't exist.");
+            }
+        }
+
+        public static void DeleteFile()
+        {
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+                Console.WriteLine("The file was successfully deleted");
+                Console.WriteLine("\nTap any button to return");
+            }
+            else
+            {
+                Console.WriteLine("The file doesn't exist.");
+                Console.WriteLine("\nTap any button to return");
+            }
+
+
+        }
     }
 }

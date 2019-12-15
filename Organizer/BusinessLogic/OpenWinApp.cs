@@ -13,17 +13,32 @@ namespace BusinessLogic
         {
             while (true) {
                 Console.Clear();
-                Console.WriteLine("1. Notebook");
-                Console.WriteLine("2. Calculator");
-                Console.WriteLine("3. Paint");
-                Console.WriteLine("4. Excel");
-                Console.WriteLine("5. Return to Main menu");
-                int input = int.Parse(Console.ReadLine());
-                if (input == 5) {
-                    return;
+
+                Console.WriteLine(" Please select the program from list\n");
+                Console.Write(
+                    " 1) Notebok\n" +
+                    " 2) Calculator\n" +
+                    " 3) Paint\n" +
+                    " 4) Excel\n" +
+                    " 5) Return to Main menu\n"+
+                    " \nEnter the nubmer of item: ");
+
+                try
+                {
+                    int input = int.Parse(Console.ReadLine());
+                    if (input == 5)
+                    {
+                        return;
+                    }
+                    string[] programs = { "Notepad.exe", "calc", "mspaint", "excel" };
+                    Process.Start(programs[input - 1]);
                 }
-                string[] programs = { "Notepad.exe", "calc", "mspaint", "excel" };
-                Process.Start(programs[input - 1]);
+                catch(Exception ex)
+                {
+                    Console.WriteLine("Incorrect number. Try again!");
+                    Console.WriteLine("\nTap any button to return");
+                    Console.ReadKey();
+                }
             }
         }
     }
