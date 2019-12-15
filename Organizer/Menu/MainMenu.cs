@@ -49,8 +49,7 @@ namespace Menu
                         break;
                     case 4:
                         Console.Clear();
-                        SendMail mail = new SendMail();
-                        mail.StartSendMail();
+                        SendMailMenu.StartSendMail();
                         Helper.TapAny();
                         break;
                     case 5:
