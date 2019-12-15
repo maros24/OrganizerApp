@@ -20,11 +20,13 @@ namespace Menu
             bool exit = true;
             while (exit)
             {
+                Console.Clear();
+                Console.WriteLine(" Please select an item from Menu\n");
                 Console.Write(
-                    "1. Send e-mail from default account\n" +
-                    "2. Send e-mail from own account\n" +
-                    "3. Exit to main menu\n" +
-                    "Input number of operations: ");
+                    "1) Send e-mail from default account\n" +
+                    "2) Send e-mail from own account\n" +
+                    "3) Return to Main menu\n" +
+                    " \nEnter the number of item: ");
                 string i = Console.ReadLine();
                 Console.Clear();
                 switch (i)
@@ -33,12 +35,12 @@ namespace Menu
                         SendMail.SendMessage(defaultEmailAddr, defaultPassword, defaultUserName);
                         break;
                     case "2":
-                        Console.WriteLine("Warning!Your account must have permission enabled for <<Untrusted Applications>>");
-                        Console.Write("Input your gmail address: ");
+                        Console.WriteLine(" Warning!Your account must have permission enabled for <<Untrusted Applications>>");
+                        Console.Write(" Input your gmail address: ");
                         ownEmailAddr = Console.ReadLine();
-                        Console.Write("Input your name: ");
+                        Console.Write(" Input your name: ");
                         ownUserName = Console.ReadLine();
-                        Console.Write("Input your password: ");
+                        Console.Write(" Input your password: ");
                         ownPasswd = Console.ReadLine();
                         SendMail.SendMessage(ownEmailAddr, ownPasswd, ownUserName);
                         break;
@@ -46,7 +48,7 @@ namespace Menu
                         exit = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid data, try again..");
+                        Console.WriteLine(" Invalid data, try again..");
                         break;
                 }
             }
