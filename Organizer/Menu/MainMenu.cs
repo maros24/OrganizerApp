@@ -25,7 +25,7 @@ namespace Menu
                     " 1) Run Programs (for Vika)\n" +
                     " 2) Work with files\n" +
                     " 3) View current weather\n" +
-                    " 4) Send an e-mail (for Nikita)\n" +
+                    " 4) Send an e-mail\n" +
                     " 5) Exit\n" +
                     " \nEnter the nubmer of item: ");
 
@@ -49,7 +49,8 @@ namespace Menu
                         break;
                     case 4:
                         Console.Clear();
-                        Console.WriteLine("Feature is creating");
+                        SendMail mail = new SendMail();
+                        mail.StartSendMail();
                         Helper.TapAny();
                         break;
                     case 5:
