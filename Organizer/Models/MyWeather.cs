@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
@@ -34,21 +33,16 @@ namespace Models
     {
         [JsonProperty("description")]
         public string Description { get; set; }
-
     }
     public partial class MyWeather
     {
         public string City { get; set; }
-
-        private const double Kelvin = 273.16;
-
         public static MyWeather FromJson(string json) => JsonConvert.DeserializeObject<MyWeather>(json, Converter.Settings);
-
         public override string ToString()
         {
             return $"\r\nCurrent weather in: {City}"
-                 + $"\r\nTemperature:        {Math.Round(Main.Temp - Kelvin)}°C"
-                 + $"\r\nFeels like:         {Math.Round(Main.FeelsLike - Kelvin)}°C"
+                 + $"\r\nTemperature:        {Main.Temp}°C"
+                 + $"\r\nFeels like:         {Main.FeelsLike}°C"
                  + $"\r\nHumidity:           {Main.Humidity}%"
                  + $"\r\nVisibility:         {Visibility} meters"
                  + $"\r\nCurrent weather:    {Weather.FirstOrDefault().Description}";
