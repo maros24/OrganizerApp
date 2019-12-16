@@ -16,6 +16,7 @@ namespace Menu
         {
             Process.GetCurrentProcess().Kill();
         }
+
         public static void TapAny()
         {
             Console.WriteLine("Tap any button to return");

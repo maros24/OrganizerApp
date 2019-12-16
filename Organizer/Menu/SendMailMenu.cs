@@ -28,7 +28,6 @@ namespace Menu
                     "3) Return to Main menu\n" +
                     " \nEnter the number of item: ");
                 string i = Console.ReadLine();
-                Console.Clear();
                 switch (i)
                 {
                     case "1":
@@ -48,7 +47,9 @@ namespace Menu
                         exit = false;
                         break;
                     default:
-                        Console.WriteLine(" Invalid data, try again..");
+                        Console.WriteLine("\n Invalid data, try again..");
+                        Console.WriteLine( "Tap any button to return");
+                        Console.ReadLine();
                         break;
                 }
             }

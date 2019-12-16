@@ -53,7 +53,7 @@ namespace Menu
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("Incorrect number. Please try again!");
+                        Console.WriteLine("Incorrect number. Tap any button to try again!");
                         break;
                 }
                 Console.ReadLine();
