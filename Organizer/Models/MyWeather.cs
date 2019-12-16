@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace Models
 {
-    public class MyWeather
+    public partial class MyWeather
     {
         [JsonProperty("main")]
         public Main Main { get; set; }
@@ -36,6 +33,19 @@ namespace Models
     {
         [JsonProperty("description")]
         public string Description { get; set; }
-
+    }
+    public partial class MyWeather
+    {
+        public string City { get; set; }
+        public static MyWeather FromJson(string json) => JsonConvert.DeserializeObject<MyWeather>(json, Converter.Settings);
+        public override string ToString()
+        {
+            return $"\r\nCurrent weather in: {City}"
+                 + $"\r\nTemperature:        {Main.Temp}°C"
+                 + $"\r\nFeels like:         {Main.FeelsLike}°C"
+                 + $"\r\nHumidity:           {Main.Humidity}%"
+                 + $"\r\nVisibility:         {Visibility} meters"
+                 + $"\r\nCurrent weather:    {Weather.FirstOrDefault().Description}";
+        }
     }
 }
