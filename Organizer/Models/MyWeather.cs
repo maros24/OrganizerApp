@@ -34,6 +34,7 @@ namespace Models
         [JsonProperty("description")]
         public string Description { get; set; }
     }
+
     public partial class MyWeather
     {
         public string City { get; set; }

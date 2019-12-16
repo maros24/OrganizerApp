@@ -10,6 +10,8 @@ namespace BusinessLogic
 		private const string APPId = "6f529c8327ba3ddaaa534da24ba75e12";
 		public static void GetWeather()
 		{
+            Console.Clear();
+            MyWeather currentWeather;
 			Console.Write("Enter a city - ");
 			string city = Console.ReadLine();
 			try
@@ -21,9 +23,9 @@ namespace BusinessLogic
 				using (WebClient wc = new WebClient())
 				{
 					string json = wc.DownloadString(webUrl.ToString());
-				}
-				var currentWeather = MyWeather.FromJson(json);
-                    		currentWeather.City = city;
+                    currentWeather = MyWeather.FromJson(json);
+                    currentWeather.City = city;
+                }
 				Console.WriteLine(currentWeather);
 			}
 			catch

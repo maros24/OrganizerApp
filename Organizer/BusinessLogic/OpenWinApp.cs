@@ -13,7 +13,6 @@ namespace BusinessLogic
         {
             while (true) {
                 Console.Clear();
-
                 Console.WriteLine(" Please select the program from list\n");
                 Console.Write(
                     " 1) Notebok\n" +
@@ -22,7 +21,6 @@ namespace BusinessLogic
                     " 4) Excel\n" +
                     " 5) Return to Main menu\n"+
                     " \nEnter the nubmer of item: ");
-
                 try
                 {
                     int input = int.Parse(Console.ReadLine());
@@ -35,8 +33,8 @@ namespace BusinessLogic
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine("Incorrect number. Try again!");
-                    Console.WriteLine("\nTap any button to return");
+                    Console.WriteLine("\n Incorrect number. Try again!");
+                    Console.WriteLine(" Tap any button to return");
                     Console.ReadKey();
                 }
             }

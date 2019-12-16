@@ -52,8 +52,6 @@ namespace Menu
                     case 4:
                         Console.Clear();
                         SendMailMenu.StartSendMail();
-                        Helper.TapAny();
-                        Console.ReadLine();
                         break;
                     case 5:
                         Console.Clear();
