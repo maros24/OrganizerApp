@@ -11,7 +11,7 @@ namespace BusinessLogic
 		public static void GetWeather()
 		{
             Console.Clear();
-            MyWeather currentWeather;
+            WeatherModel currentWeather;
 			Console.Write("Enter a city - ");
 			string city = Console.ReadLine();
 			try
@@ -23,7 +23,7 @@ namespace BusinessLogic
 				using (WebClient wc = new WebClient())
 				{
 					string json = wc.DownloadString(webUrl.ToString());
-                    currentWeather = MyWeather.FromJson(json);
+                    currentWeather = WeatherModel.FromJson(json);
                     currentWeather.City = city;
                 }
 				Console.WriteLine(currentWeather);
