@@ -1,10 +1,5 @@
 ﻿using BusinessLogic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Menu
 {
@@ -20,7 +15,7 @@ namespace Menu
                 Console.WriteLine(" Work with files!");
                 Console.WriteLine(" Please select an item from Menu\n");
                 Console.Write(
-                    " 1) Write to File\n" +
+                    " 1) Write to file\n" +
                     " 2) Read from file\n" +
                     " 3) Delete selected line\n" +
                     " 4) Delete file\n" +

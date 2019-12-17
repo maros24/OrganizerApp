@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
@@ -18,7 +15,7 @@ namespace BusinessLogic
                 string path = System.IO.Path.GetFullPath(@"file.txt");
                 Console.WriteLine("Please enter the text for saving");
                 string textToWrite = Console.ReadLine();
-                using (StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Default))
+                using (StreamWriter sw = new StreamWriter(path, true, Encoding.Default))
                 {
                     sw.WriteLine(textToWrite);
                 }
@@ -36,7 +33,7 @@ namespace BusinessLogic
             try
             {
                 Console.WriteLine("The text from the file is below:");
-                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+                using (StreamReader sr = new StreamReader(path, Encoding.Default))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)

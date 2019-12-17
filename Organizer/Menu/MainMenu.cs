@@ -44,7 +44,6 @@ namespace Menu
                         break;
                     case 3:
                         Console.Clear();
-                        Console.WriteLine("Ivan will fix this feature");
                         WeatherData.GetWeather();
                         Helper.TapAny();
                         Console.ReadLine();

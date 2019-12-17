@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
@@ -15,7 +11,7 @@ namespace BusinessLogic
                 Console.Clear();
                 Console.WriteLine(" Please select the program from list\n");
                 Console.Write(
-                    " 1) Notebok\n" +
+                    " 1) Notebook\n" +
                     " 2) Calculator\n" +
                     " 3) Paint\n" +
                     " 4) Excel\n" +
