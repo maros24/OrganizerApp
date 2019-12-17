@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Models
 {
-    public class WeatherModel
+    public class MyWeather
     {
         [JsonProperty("main")]
         public Main Main { get; set; }
@@ -17,7 +17,7 @@ namespace Models
 
         public string City { get; set; }
 
-        public static WeatherModel FromJson(string json) => JsonConvert.DeserializeObject<WeatherModel>(json, Converter.Settings);
+        public static MyWeather FromJson(string json) => JsonConvert.DeserializeObject<MyWeather>(json, Converter.Settings);
 
         public override string ToString()
         {
